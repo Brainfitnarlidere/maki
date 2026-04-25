@@ -11,10 +11,10 @@
     <meta http-equiv="X-Content-Type-Options" content="nosniff">
     <meta http-equiv="X-Frame-Options" content="DENY">
     <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net https://kit.fontawesome.com https://ka-f.fontawesome.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://ka-f.fontawesome.com; font-src 'self' https://fonts.gstatic.com https://ka-f.fontawesome.com; connect-src 'self' https://ararahrvohxrtcmcutad.supabase.co wss://ararahrvohxrtcmcutad.supabase.co https://ka-f.fontawesome.com; img-src 'self' data:; frame-ancestors 'none';">
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://ararahrvohxrtcmcutad.supabase.co wss://ararahrvohxrtcmcutad.supabase.co; img-src 'self' data:; frame-ancestors 'none';">
     
     <!-- FontAwesome for Icons -->
-    <script src="https://kit.fontawesome.com/a076d05399.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
     <link rel="stylesheet" href="style.css">
 </head>
@@ -127,21 +127,23 @@
         <div class="container">
             <h2 class="text-center">Bağış Kanallarımız</h2>
             <div class="bank-grid">
-                <div class="bank-card text-center">
+                <div class="bank-card">
                     <i class="fas fa-university bank-icon"></i>
-                    <h3>Banka Havalesi / EFT</h3>
+                    <h3>Banka Transferi</h3>
                     <p class="bank-name">Türkiye İş Bankası</p>
                     <p class="account-name">Maki Sosyal Yardımlaşma ve Dayanışma Derneği</p>
-                    <div class="iban-box">
-                        <span class="iban-label">IBAN:</span>
-                        <code class="iban-text">TR95 0006 4000 0013 4350 8756 80</code>
+                    <div class="iban-box" onclick="copyIban()" title="Kopyalamak için tıkla">
+                        <span class="iban-label">IBAN NUMARASI</span>
+                        <code class="iban-text" id="ibanText">TR95 0006 4000 0013 4350 8756 80</code>
                     </div>
                 </div>
-                <div class="qr-card text-center">
+                <div class="qr-card">
                     <i class="fas fa-qrcode bank-icon"></i>
                     <h3>QR Kod ile Bağış</h3>
-                    <p>Mobil bankacılık uygulamanızdan okutarak hızlıca bağış yapabilirsiniz.</p>
-                    <img src="assets/qr_code.jpg" alt="Bağış QR Kod" class="qr-img">
+                    <p>Hızlı bağış için telefonunuzdan okutun.</p>
+                    <div class="qr-img-container">
+                        <img src="assets/qr_code.jpeg" alt="Bağış QR Kod" class="qr-img">
+                    </div>
                 </div>
             </div>
             <div class="text-center mt-5">

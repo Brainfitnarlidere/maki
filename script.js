@@ -1,4 +1,11 @@
 /* Maki Derneği - Protected Script */
+window.copyIban = () => {
+    const t = document.getElementById('ibanText').innerText;
+    navigator.clipboard.writeText(t).then(() => {
+        alert('IBAN kopyalandı! Bağışınız için teşekkür ederiz.');
+    });
+};
+
 (function() {
     const _0xUrl = 'https://ararahrvohxrtcmcutad.supabase.co';
     const _0xKey = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFyYXJhaHJ2b2h4cnRjbWN1dGFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxMzc5NzUsImV4cCI6MjA5MjcxMzk3NX0.8UGKd1V-7qNgIQfdICVqLjBPc1KYpXLhoWhTVXst-i8';

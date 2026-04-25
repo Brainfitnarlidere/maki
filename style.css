@@ -495,6 +495,134 @@ footer {
     transform: translateY(0) !important;
 }
 
+/* Bank & Donation Section */
+.bank-section {
+    padding: 80px 0;
+    background: linear-gradient(180deg, #F9F9F9 0%, #FFFFFF 100%);
+}
+
+.bank-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 40px;
+    margin-top: 50px;
+}
+
+.bank-card, .qr-card {
+    background: #fff;
+    padding: 40px;
+    border-radius: 20px;
+    box-shadow: 0 10px 40px rgba(0,0,0,0.05);
+    transition: var(--transition);
+    border: 1px solid rgba(197, 54, 120, 0.05);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.bank-card:hover, .qr-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 50px rgba(197, 54, 120, 0.1);
+}
+
+.bank-icon {
+    font-size: 3.5rem;
+    color: var(--primary-color);
+    margin-bottom: 25px;
+    background: var(--primary-light);
+    width: 100px;
+    height: 100px;
+    line-height: 100px;
+    border-radius: 50%;
+}
+
+.bank-name {
+    font-size: 1.4rem;
+    font-weight: 700;
+    color: var(--text-color);
+    margin-bottom: 8px;
+}
+
+.account-name {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-bottom: 25px;
+}
+
+.iban-box {
+    background: #fdfdfd;
+    padding: 20px;
+    border-radius: 12px;
+    border: 2px dashed #ddd;
+    width: 100%;
+    cursor: pointer;
+    transition: var(--transition);
+    position: relative;
+}
+
+.iban-box:hover {
+    border-color: var(--primary-color);
+    background: var(--primary-light);
+}
+
+.iban-box::after {
+    content: 'Tıkla ve Kopyala';
+    position: absolute;
+    bottom: -25px;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 0.8rem;
+    color: var(--primary-color);
+    opacity: 0;
+    transition: var(--transition);
+    font-weight: 600;
+}
+
+.iban-box:hover::after {
+    opacity: 1;
+    bottom: -30px;
+}
+
+.iban-label {
+    display: block;
+    font-weight: 700;
+    color: var(--primary-color);
+    font-size: 0.9rem;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+}
+
+.iban-text {
+    font-family: 'Montserrat', sans-serif;
+    font-size: 1.05rem;
+    color: #333;
+    letter-spacing: 0.5px;
+    word-break: break-all;
+}
+
+.qr-img-container {
+    padding: 20px;
+    background: #fff;
+    border-radius: 15px;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.05);
+    margin-top: 20px;
+}
+
+.qr-img {
+    max-width: 220px;
+    display: block;
+    height: auto;
+}
+
+@media (max-width: 768px) {
+    .bank-grid {
+        grid-template-columns: 1fr;
+    }
+    .bank-card, .qr-card {
+        padding: 30px 20px;
+    }
+}
+
 /* Vision Signature Logo */
 .vision-signature {
     display: block;
