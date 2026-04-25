@@ -180,10 +180,21 @@ h1, h2, h3 {
 .btn-primary {
     background: var(--primary-color);
     color: #fff;
+    font-size: 1.05rem; /* Boyut artırıldı */
+    padding: 1.1rem 2.5rem; /* Genişlik ve yükseklik artırıldı */
+    border-radius: 50px; /* Daha modern oval görünüm */
 }
 
 .btn-primary:hover {
     background: var(--primary-dark);
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(197, 54, 120, 0.3);
+}
+
+.btn-block {
+    width: 100%;
+    display: block;
+    margin-top: 1rem;
 }
 
 .btn-secondary {
@@ -532,8 +543,12 @@ footer {
     background: var(--primary-light);
     width: 100px;
     height: 100px;
-    line-height: 100px;
+    display: flex; /* Flexbox ile tam merkezleme */
+    align-items: center;
+    justify-content: center;
     border-radius: 50%;
+    margin-left: auto; /* Ortalamak için */
+    margin-right: auto;
 }
 
 .bank-name {
@@ -541,12 +556,14 @@ footer {
     font-weight: 700;
     color: var(--text-color);
     margin-bottom: 8px;
+    text-align: center;
 }
 
 .account-name {
     font-size: 1.1rem;
     color: var(--light-text);
     margin-bottom: 25px;
+    text-align: center;
 }
 
 .iban-box {
@@ -558,6 +575,7 @@ footer {
     cursor: pointer;
     transition: var(--transition);
     position: relative;
+    text-align: center;
 }
 
 .iban-box:hover {
@@ -605,13 +623,24 @@ footer {
     background: #fff;
     border-radius: 15px;
     box-shadow: 0 5px 20px rgba(0,0,0,0.05);
-    margin-top: 20px;
+    margin-top: 35px; /* Boşluk artırıldı */
 }
 
 .qr-img {
     max-width: 220px;
     display: block;
     height: auto;
+}
+
+/* Online Bağış Alanı Düzenlemesi */
+.donation-footer {
+    margin-top: 60px;
+}
+
+.donation-footer p {
+    color: var(--light-text);
+    font-size: 1.1rem;
+    margin-bottom: 25px; /* Butonla arasındaki boşluk artırıldı */
 }
 
 @media (max-width: 768px) {
