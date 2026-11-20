@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://makidernegi.com/sitemap.xml

@@ -4,15 +4,49 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Maki Sosyal Yardımlaşma ve Dayanışma Derneği</title>
-    <meta name="description" content="Maki Sosyal Yardımlaşma ve Dayanışma Derneği - İyilikte Buluşalım.">
+    <meta name="description" content="Maki Sosyal Yardımlaşma ve Dayanışma Derneği; eğitim yolunda maddi engellerle karşılaşan gençlere burs, gıda, kırtasiye ve barınma desteği sağlar. Bağış yapın, gönüllü olun.">
+    <meta name="theme-color" content="#C53678">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="assets/favicon.png">
+    <link rel="apple-touch-icon" href="assets/apple-touch-icon.png">
+
+    <!-- Sosyal medya paylaşım önizlemesi (Open Graph) -->
+    <link rel="canonical" href="https://makidernegi.com/">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://makidernegi.com/">
+    <meta property="og:locale" content="tr_TR">
+    <meta property="og:site_name" content="Maki Derneği">
+    <meta property="og:title" content="Maki Sosyal Yardımlaşma ve Dayanışma Derneği">
+    <meta property="og:description" content="İyilik bir kalp atışı uzağınızda. Eğitim yolundaki gençlerimize destek olun.">
+    <meta property="og:image" content="https://makidernegi.com/assets/og-image.jpg">
+    <meta property="og:image:width" content="640">
+    <meta property="og:image:height" content="640">
+    <meta name="twitter:card" content="summary">
+
     <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-    <!-- Security Headers & CSP -->
-    <meta http-equiv="X-Content-Type-Options" content="nosniff">
-    <meta http-equiv="X-Frame-Options" content="DENY">
-    <meta http-equiv="Referrer-Policy" content="strict-origin-when-cross-origin">
-    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://ararahrvohxrtcmcutad.supabase.co wss://ararahrvohxrtcmcutad.supabase.co; img-src 'self' data:; frame-ancestors 'none';">
-    
+    <!-- Güvenlik: X-Frame-Options ve frame-ancestors yalnızca HTTP başlığıyla çalışır, bkz. _headers -->
+    <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' https://cdn.jsdelivr.net; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com https://cdnjs.cloudflare.com; font-src 'self' https://fonts.gstatic.com https://cdnjs.cloudflare.com; connect-src 'self' https://ararahrvohxrtcmcutad.supabase.co wss://ararahrvohxrtcmcutad.supabase.co; img-src 'self' data:; base-uri 'self'; form-action 'self'; object-src 'none';">
+    <meta name="referrer" content="strict-origin-when-cross-origin">
+
+    <!-- Arama motorları için dernek bilgisi -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "NGO",
+        "name": "Maki Sosyal Yardımlaşma ve Dayanışma Derneği",
+        "alternateName": "Maki Derneği",
+        "url": "https://makidernegi.com/",
+        "logo": "https://makidernegi.com/assets/logo.png",
+        "email": "makiyardimdernegi@gmail.com",
+        "telephone": "+90 530 080 70 76",
+        "sameAs": ["https://www.instagram.com/maki.dernegi/"]
+    }
+    </script>
+
     <!-- FontAwesome for Icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     
@@ -22,10 +56,10 @@
     <!-- Navigation -->
     <nav id="main-nav">
         <div class="container nav-container">
-            <div class="logo">
-                <img src="assets/logo.png" alt="Maki Logo" id="nav-logo">
-            </div>
-            <ul class="nav-links">
+            <a href="#home" class="logo" aria-label="Maki Derneği - Anasayfa">
+                <img src="assets/logo.png" alt="Maki Sosyal Dayanışma ve Yardımlaşma Derneği" id="nav-logo" width="221" height="60">
+            </a>
+            <ul class="nav-links" id="nav-links">
                 <li><a href="#home">Anasayfa</a></li>
                 <li><a href="#about">Hakkımızda</a></li>
                 <li><a href="#projects">Projelerimiz</a></li>
@@ -33,13 +67,15 @@
                 <li><a href="#contact">İletişim</a></li>
                 <li class="donation-item"><a href="/bagis" class="btn-donate">Bağış Yap</a></li>
             </ul>
-            <div class="menu-toggle">
+            <button type="button" class="menu-toggle" aria-label="Menüyü aç" aria-expanded="false" aria-controls="nav-links">
                 <span></span>
                 <span></span>
                 <span></span>
-            </div>
+            </button>
         </div>
     </nav>
+
+    <main>
 
     <!-- Hero Section -->
     <header id="home" class="hero">
@@ -68,7 +104,7 @@
         <div class="container text-center">
             <h2>Vizyonumuz</h2>
             <p class="lead">Hedefimiz; 1 milyon koca yürekli insanla omuz omuza vererek, geleceğe umutla koşan aydınlık gençlerimizi aynı hayalde buluşturmaktır. Gönlünü bu yola koymuş 'ışık taşıyıcılarını', yarınlarımızın mimarı olacak gençlerimizle bir araya getirerek dev bir iyilik köprüsü kuruyoruz. 1 milyon kalp, tek bir gelecek.</p>
-            <img src="assets/logo.png" alt="Maki Logo" class="vision-signature">
+            <img src="assets/logo-mark.png" alt="" class="vision-signature" width="700" height="302" loading="lazy">
         </div>
     </section>
 
@@ -76,7 +112,7 @@
     <section id="about" class="about-section">
         <div class="container grid-2">
             <div class="about-img">
-                <img src="assets/we.png" alt="Maki Derneği Yönetim ve Üyeler">
+                <img src="assets/we.png" alt="Maki Derneği Yönetim ve Üyeler" width="640" height="640" loading="lazy">
             </div>
             <div class="about-text">
                 <h2>Biz Kimiz?</h2>
@@ -93,7 +129,7 @@
             <div class="projects-grid">
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="assets/project1.png" alt="Eğitim Yardımları">
+                        <img src="assets/project1.png" alt="Eğitim Yardımları" width="640" height="640" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Geleceğe Kalem</h3>
@@ -102,7 +138,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="assets/project2.png" alt="Gıda Yardımları">
+                        <img src="assets/project2.png" alt="Gıda Yardımları" width="640" height="640" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Geleceğe Bereket</h3>
@@ -111,7 +147,7 @@
                 </div>
                 <div class="project-card">
                     <div class="project-img">
-                        <img src="assets/project3.png" alt="Eğitim ve Barınma Yardımları">
+                        <img src="assets/project3.jpg" alt="Eğitim ve Barınma Yardımları" width="900" height="600" loading="lazy">
                     </div>
                     <div class="project-content">
                         <h3>Umutlu Yarınlara</h3>
@@ -132,17 +168,19 @@
                     <h3>Banka Transferi</h3>
                     <p class="bank-name">Türkiye İş Bankası</p>
                     <p class="account-name">Maki Sosyal Yardımlaşma ve Dayanışma Derneği</p>
-                    <div class="iban-box" onclick="copyIban()" title="Kopyalamak için tıkla">
+                    <button type="button" class="iban-box" id="ibanBox" aria-label="IBAN numarasını kopyala: TR95 0006 4000 0013 4350 8756 80">
                         <span class="iban-label">IBAN NUMARASI</span>
                         <code class="iban-text" id="ibanText">TR95 0006 4000 0013 4350 8756 80</code>
-                    </div>
+                        <span class="iban-hint" aria-hidden="true"><i class="fas fa-copy"></i> Kopyalamak için dokunun</span>
+                    </button>
+                    <p class="copy-status" id="ibanStatus" role="status" aria-live="polite"></p>
                 </div>
                 <div class="qr-card">
                     <i class="fas fa-qrcode bank-icon"></i>
                     <h3>QR Kod ile Bağış</h3>
                     <p>Mobil bankacılık uygulamanızdan <strong>"QR ile Para Gönder"</strong> seçeneğini kullanarak bu kodu okutun. IBAN yazmanıza gerek kalmadan hızlıca bağış yapabilirsiniz.</p>
                     <div class="qr-img-container">
-                        <img src="assets/qr_code.jpeg" alt="Bağış QR Kod" class="qr-img">
+                        <img src="assets/qr_code.jpeg" alt="Bağış için banka QR kodu" class="qr-img" width="220" height="220" loading="lazy">
                     </div>
                 </div>
             </div>
@@ -152,39 +190,50 @@
             </div>
         </div>
     </section>
-    <section id="volunteer" class="volunteer-section bg-light">
+    <section id="volunteer" class="volunteer-section">
         <div class="container">
             <h2 class="text-center">Gönüllü Ol</h2>
             <p class="lead text-center">İyilik yolculuğumuzda bize katılmak ve bir gencin geleceğine ışık tutmak isterseniz, gönüllü formumuzu doldurabilirsiniz.</p>
             <div class="volunteer-form-container">
-                <form id="volunteerForm">
+                <form id="volunteerForm" novalidate>
                     <div class="form-grid">
                         <div class="form-group">
-                            <input type="text" name="fullName" placeholder="Adınız Soyadınız *" required>
+                            <label for="fullName" class="sr-only">Adınız Soyadınız</label>
+                            <input type="text" id="fullName" name="fullName" placeholder="Adınız Soyadınız *" autocomplete="name" maxlength="100" required>
                         </div>
                         <div class="form-group">
-                            <input type="email" name="email" placeholder="E-posta Adresiniz *" required>
+                            <label for="email" class="sr-only">E-posta Adresiniz</label>
+                            <input type="email" id="email" name="email" placeholder="E-posta Adresiniz *" autocomplete="email" maxlength="100" required>
                         </div>
                         <div class="form-group">
-                            <input type="tel" name="phone" placeholder="Telefon Numaranız ( 0530 080 70 76 )" maxlength="14">
+                            <label for="phone" class="sr-only">Telefon Numaranız</label>
+                            <input type="tel" id="phone" name="phone" placeholder="Telefon (05XX XXX XX XX)" autocomplete="tel" inputmode="numeric" maxlength="14">
                         </div>
                     </div>
-                    <div class="volunteer-options">
-                        <p>Bize Nasıl Katılmak İstersiniz? (En az birini seçmelisiniz)</p>
+                    <fieldset class="volunteer-options">
+                        <legend>Bize Nasıl Katılmak İstersiniz? (En az birini seçmelisiniz)</legend>
                         <div class="checkbox-group">
                             <label><input type="checkbox" name="interest" value="donor"> Aylık Bağışçı Olmak İstiyorum</label>
                             <label><input type="checkbox" name="interest" value="volunteer"> Gönüllü Olarak Yardım Etmek İstiyorum</label>
                             <label><input type="checkbox" name="interest" value="newsletter"> Etkinliklerden Düzenli Haberdar Olmak İstiyorum</label>
                         </div>
-                    </div>
+                    </fieldset>
                     <div class="form-group">
-                        <textarea name="message" placeholder="Neler Yapabileceğinizi Not Edin (Yazı ve Mesajınız)" rows="4" required></textarea>
+                        <label for="message" class="sr-only">Mesajınız</label>
+                        <textarea id="message" name="message" placeholder="Neler Yapabileceğinizi Not Edin (Yazı ve Mesajınız) *" rows="4" maxlength="1000" required></textarea>
+                    </div>
+                    <div class="consent">
+                        <label>
+                            <input type="checkbox" name="kvkk" required>
+                            <span><a href="/kvkk/" target="_blank" rel="noopener">KVKK Aydınlatma Metni</a>'ni okudum; kişisel verilerimin başvurumun değerlendirilmesi ve benimle iletişime geçilmesi amacıyla işlenmesine onay veriyorum. *</span>
+                        </label>
                     </div>
                     <!-- Bot Tuzağı (Honeypot) - Kullanıcılar görmez -->
-                    <div style="display:none;">
+                    <div class="hp-field" aria-hidden="true">
                         <input type="text" name="honeypot" tabindex="-1" autocomplete="off">
                     </div>
                     <button type="submit" class="btn btn-primary btn-block">Gönüllü Ol / Mesaj Gönder</button>
+                    <p class="form-status" id="formStatus" role="status" aria-live="polite"></p>
                 </form>
             </div>
         </div>
@@ -198,23 +247,23 @@
                     <h2>İletişime Geçin</h2>
                     <p>Sorularınız veya destek talepleriniz için bize ulaşabilirsiniz.</p>
                     <ul class="contact-list">
-                        <li><strong>E-posta:</strong> makiyardimdernegi@gmail.com</li>
+                        <li><strong>E-posta:</strong> <a href="mailto:makiyardimdernegi@gmail.com">makiyardimdernegi@gmail.com</a></li>
                         <li><strong>Telefon:</strong> <a href="tel:+905300807076">0530 080 70 76</a></li>
-                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/905300807076" target="_blank">0530 080 70 76</a></li>
-                        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/maki.dernegi/" target="_blank">@maki.dernegi</a></li>
+                        <li><strong>WhatsApp:</strong> <a href="https://wa.me/905300807076" target="_blank" rel="noopener">0530 080 70 76</a></li>
+                        <li><strong>Instagram:</strong> <a href="https://www.instagram.com/maki.dernegi/" target="_blank" rel="noopener">@maki.dernegi</a></li>
                     </ul>
                 </div>
                 <div class="contact-map">
-                    <!-- Bir harita veya görsel gelebilir, şimdilik temiz tutalım -->
-                    <img src="assets/about_image.png" alt="Maki Dernek" style="width: 100%; border-radius: 15px; box-shadow: 10px 10px 30px rgba(0,0,0,0.1);">
+                    <img src="assets/about_image.png" alt="" width="640" height="640" loading="lazy">
                 </div>
             </div>
         </div>
     </section>
+    </main>
 
     <!-- Floating WhatsApp Button -->
-    <a href="https://wa.me/905300807076" class="whatsapp-float" target="_blank" aria-label="WhatsApp ile ulaşın">
-        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+    <a href="https://wa.me/905300807076" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp ile ulaşın">
+        <svg aria-hidden="true" focusable="false" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
             <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.445 0 .081 5.363.079 11.969c0 2.112.551 4.171 1.597 6.013L0 24l6.191-1.623a11.826 11.826 0 005.856 1.535h.005c6.598 0 11.965-5.364 11.967-11.97a11.854 11.854 0 00-3.61-8.442z" fill="#FFF"/>
         </svg>
     </a>
@@ -223,14 +272,15 @@
     <footer>
         <div class="container text-center">
             <div class="footer-logo">
-                <img src="assets/logo.png" alt="Maki Logo Büyük" id="footer-logo-img">
+                <img src="assets/logo.png" alt="Maki Sosyal Dayanışma ve Yardımlaşma Derneği" id="footer-logo-img" width="300" height="82" loading="lazy">
             </div>
-            <p>&copy; 2024 Maki Sosyal Yardımlaşma ve Dayanışma Derneği. Tüm hakları saklıdır.</p>
+            <p class="footer-links"><a href="/kvkk/">KVKK Aydınlatma Metni</a></p>
+            <p>&copy; <span id="year">2026</span> Maki Sosyal Yardımlaşma ve Dayanışma Derneği. Tüm hakları saklıdır.</p>
         </div>
     </footer>
 
-    <!-- Scripts -->
-    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script>
-    <script src="script.js"></script>
+    <!-- Scripts (sürüm sabitlenmiş + bütünlük kontrolü) -->
+    <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.110.0/dist/umd/supabase.js" integrity="sha384-3wY11tldQ5+yWqAvmTN4XtQvnjoTva0cV15O/O/O5NTtp0ivVopSzLOzsVXWZse9" crossorigin="anonymous" defer></script>
+    <script src="script.js" defer></script>
 </body>
 </html>

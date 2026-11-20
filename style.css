@@ -214,6 +214,34 @@ h1, h2, h3 {
     display: none;
     flex-direction: column;
     cursor: pointer;
+    background: none;
+    border: none;
+    padding: 10px;
+    margin-right: -10px;
+}
+
+.menu-toggle.open span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.menu-toggle.open span:nth-child(2) { opacity: 0; }
+.menu-toggle.open span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+.logo { display: inline-flex; }
+
+/* Erişilebilirlik yardımcıları */
+.sr-only {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    padding: 0;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+    border: 0;
+}
+
+a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visible {
+    outline: 3px solid var(--primary-color);
+    outline-offset: 3px;
 }
 
 .menu-toggle span {
@@ -296,6 +324,7 @@ h2::after {
 /* About Section */
 .about-img img {
     width: 100%;
+    height: auto;
     border-radius: 15px;
     box-shadow: 20px 20px 0 var(--primary-color);
 }
@@ -352,9 +381,10 @@ h2::after {
 .volunteer-options {
     margin-bottom: 1.5rem;
     text-align: left;
+    border: none;
 }
 
-.volunteer-options p {
+.volunteer-options legend {
     font-weight: 700;
     margin-bottom: 0.5rem;
     font-size: 0.9rem;
@@ -421,6 +451,64 @@ h2::after {
 
 .form-group input:focus, .form-group textarea:focus {
     border-color: var(--primary-color);
+}
+
+.volunteer-section {
+    background: var(--primary-light);
+}
+
+.consent label {
+    display: flex;
+    gap: 0.6rem;
+    align-items: flex-start;
+    font-size: 0.88rem;
+    color: var(--light-text);
+    cursor: pointer;
+}
+
+.consent input {
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+    width: auto;
+}
+
+.consent a {
+    color: var(--primary-color);
+    font-weight: 600;
+}
+
+.hp-field {
+    position: absolute;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+}
+
+.form-status, .copy-status {
+    margin-top: 1rem;
+    font-weight: 600;
+    text-align: center;
+    min-height: 1.5em;
+}
+
+.form-status.is-success, .copy-status.is-success { color: #1e8e4e; }
+.form-status.is-error, .copy-status.is-error { color: #c0392b; }
+
+.contact-map img {
+    width: 100%;
+    height: auto;
+    border-radius: 15px;
+    box-shadow: 10px 10px 30px rgba(0,0,0,0.1);
+}
+
+.footer-links {
+    margin-bottom: 0.75rem;
+}
+
+.footer-links a {
+    color: #fff;
+    opacity: 0.85;
 }
 
 .contact-list li a {
@@ -576,29 +664,21 @@ footer {
     transition: var(--transition);
     position: relative;
     text-align: center;
+    font: inherit;
+    color: inherit;
 }
 
-.iban-box:hover {
+.iban-box:hover, .iban-box.copied {
     border-color: var(--primary-color);
     background: var(--primary-light);
 }
 
-.iban-box::after {
-    content: 'Tıkla ve Kopyala';
-    position: absolute;
-    bottom: -25px;
-    left: 50%;
-    transform: translateX(-50%);
+.iban-hint {
+    display: block;
+    margin-top: 8px;
     font-size: 0.8rem;
     color: var(--primary-color);
-    opacity: 0;
-    transition: var(--transition);
     font-weight: 600;
-}
-
-.iban-box:hover::after {
-    opacity: 1;
-    bottom: -30px;
 }
 
 .iban-label {
@@ -656,9 +736,21 @@ footer {
 .vision-signature {
     display: block;
     margin: 2rem 0 0 auto; /* Sağa Yasla */
-    width: 280px; /* Daha Büyük */
-    height: 120px; /* Sabit yükseklik */
-    object-fit: cover;
-    object-position: -20px center; /* Sadece soldaki "Maki" kısmını göstermek için kaydırma */
+    width: 240px;
+    max-width: 60%;
+    height: auto;
     opacity: 0.9;
+}
+
+/* Hareket hassasiyeti olan kullanıcılar için animasyonları kapat */
+@media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+        animation: none !important;
+        transition: none !important;
+        scroll-behavior: auto !important;
+    }
+    .hero-content, .about-text, .about-img, .project-card, .contact-info {
+        opacity: 1;
+        transform: none;
+    }
 }
