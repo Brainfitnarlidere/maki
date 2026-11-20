@@ -6,6 +6,16 @@
     const SUPABASE_URL = 'https://ararahrvohxrtcmcutad.supabase.co';
     const SUPABASE_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImFyYXJhaHJ2b2h4cnRjbWN1dGFkIiwicm9sZSI6ImFub24iLCJpYXQiOjE3NzcxMzc5NzUsImV4cCI6MjA5MjcxMzk3NX0.8UGKd1V-7qNgIQfdICVqLjBPc1KYpXLhoWhTVXst-i8';
 
+    // GEÇİCİ: Supabase projesi şu an erişilemez durumda (alan adı çözülmüyor).
+    // true iken form, başvuruyu hazır bir e-posta olarak açar. Supabase düzelince false yapın.
+    const USE_EMAIL_FALLBACK = true;
+    const CONTACT_EMAIL = 'makiyardimdernegi@gmail.com';
+    const INTEREST_LABELS = {
+        donor: 'Aylık bağışçı olmak',
+        volunteer: 'Gönüllü olarak yardım etmek',
+        newsletter: 'Etkinliklerden haberdar olmak'
+    };
+
     const NAV_OFFSET = 80;
 
     const setStatus = (el, text, type) => {
@@ -170,6 +180,26 @@
 
             if (error) {
                 setStatus(status, error, 'error');
+                return;
+            }
+
+            if (USE_EMAIL_FALLBACK) {
+                const subject = 'Gönüllü Başvurusu - ' + name;
+                const body = [
+                    'Ad Soyad: ' + name,
+                    'E-posta: ' + email,
+                    'Telefon: ' + (phone || '-'),
+                    'Katılım tercihi: ' + interests.map(i => INTEREST_LABELS[i] || i).join(', '),
+                    '',
+                    'Mesaj:',
+                    message.substring(0, 1000),
+                    '',
+                    'KVKK Aydınlatma Metni onaylandı.'
+                ].join('\n');
+                window.location.href = 'mailto:' + CONTACT_EMAIL +
+                    '?subject=' + encodeURIComponent(subject) +
+                    '&body=' + encodeURIComponent(body);
+                setStatus(status, 'E-posta uygulamanızda başvurunuz hazırlandı; göndermek için "Gönder"e basmanız yeterli. E-posta uygulaması açılmadıysa bilgilerinizi ' + CONTACT_EMAIL + ' adresine ya da WhatsApp üzerinden iletebilirsiniz.', 'success');
                 return;
             }
 

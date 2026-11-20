@@ -363,6 +363,182 @@ h2::after {
     margin-bottom: 1rem;
 }
 
+.project-content p + p {
+    margin-top: 0.8rem;
+}
+
+.project-quote {
+    margin-top: 1.2rem !important;
+    padding: 0.9rem 1rem;
+    border-left: 4px solid var(--primary-color);
+    background: var(--primary-light);
+    border-radius: 0 10px 10px 0;
+    font-weight: 600;
+    color: var(--primary-dark);
+}
+
+.project-img {
+    position: relative;
+}
+
+.project-img-caption {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 2.5rem 1.25rem 1rem;
+    background: linear-gradient(transparent, rgba(0, 0, 0, 0.7));
+    color: #fff;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.05rem;
+    line-height: 1.35;
+}
+
+/* Şeffaflık & Belgeler */
+.documents-lead {
+    font-size: 1.15rem;
+    margin-bottom: 1rem;
+}
+
+.documents-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1.5rem;
+    margin-top: 3rem;
+}
+
+@media (max-width: 1000px) {
+    .documents-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+@media (max-width: 700px) {
+    .documents-grid { grid-template-columns: 1fr; }
+}
+
+.doc-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 2rem;
+    background: #fff;
+    border: 1px solid #eee;
+    border-radius: 16px;
+    text-decoration: none;
+    color: var(--text-color);
+    transition: var(--transition);
+}
+
+a.doc-card:hover {
+    border-color: var(--primary-color);
+    transform: translateY(-4px);
+    box-shadow: 0 10px 30px rgba(197, 54, 120, 0.1);
+}
+
+.doc-icon {
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    background: var(--primary-light);
+    width: 56px;
+    height: 56px;
+    border-radius: 14px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.2rem;
+}
+
+.doc-card h3 {
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+}
+
+.doc-card p {
+    color: var(--light-text);
+    font-size: 0.95rem;
+    flex-grow: 1;
+}
+
+.doc-action {
+    margin-top: 1.2rem;
+    font-weight: 700;
+    font-size: 0.9rem;
+    color: var(--primary-color);
+}
+
+.doc-card.is-pending .doc-action {
+    color: #999;
+}
+
+.doc-type {
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    color: var(--primary-color);
+    margin-bottom: 0.3rem;
+}
+
+.doc-card p.doc-approval {
+    flex-grow: 0;
+    margin-top: 1rem;
+    font-size: 0.85rem;
+    color: #1e7a46;
+    background: #eef8f2;
+    padding: 0.6rem 0.75rem;
+    border-radius: 8px;
+}
+
+.doc-approval .fa-circle-check {
+    margin-right: 0.25rem;
+}
+
+.doc-meta {
+    margin-top: 0.6rem;
+    font-size: 0.8rem;
+    color: #999;
+}
+
+/* Çok paragraflı metin blokları (Görevimiz, Vizyonumuz) */
+.prose {
+    max-width: 780px;
+    margin: 0 auto;
+}
+
+.prose p {
+    font-size: 1.1rem;
+    color: var(--light-text);
+    margin-bottom: 1.1rem;
+}
+
+.prose .lead {
+    font-size: 1.4rem;
+    color: var(--text-color);
+    margin-bottom: 1.5rem;
+}
+
+.prose .slogan {
+    margin-top: 2rem;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.5rem;
+    color: var(--primary-color);
+}
+
+.about-text p + p {
+    margin-top: 1rem;
+}
+
+.about-lead {
+    font-size: 1.2rem;
+    font-weight: 600;
+}
+
+@media (max-width: 768px) {
+    .prose .lead { font-size: 1.2rem; }
+    .prose .slogan { font-size: 1.25rem; }
+}
+
 /* Contact Section */
 .contact-list {
     list-style: none;
@@ -597,7 +773,7 @@ footer {
 /* Bank & Donation Section */
 .bank-section {
     padding: 80px 0;
-    background: linear-gradient(180deg, #F9F9F9 0%, #FFFFFF 100%);
+    background: #FFFFFF;
 }
 
 .bank-grid {
