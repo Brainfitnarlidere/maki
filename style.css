@@ -123,14 +123,14 @@ h1, h2, h3 {
 }
 
 /* Mobile Adjustments for Nav */
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .nav-links li a {
         margin-left: 0 !important;
         display: block;
         padding: 10px 0;
     }
     
-    .btn-donate {
+    .nav-links li a.btn-donate {
         margin: 1.5rem auto 0 auto !important; /* Ortalamak için */
         width: 100%;
         max-width: 250px;
@@ -252,7 +252,7 @@ a:focus-visible, button:focus-visible, input:focus-visible, textarea:focus-visib
     transition: var(--transition);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1100px) {
     .menu-toggle {
         display: flex;
     }
@@ -928,5 +928,24 @@ footer {
     .hero-content, .about-text, .about-img, .project-card, .contact-info {
         opacity: 1;
         transform: none;
+    }
+}
+
+/* Alt sayfalardaki "Anasayfaya Dön" butonu (telefonda taşmasın) */
+.nav-container > .btn {
+    white-space: nowrap;
+}
+
+@media (max-width: 480px) {
+    .nav-container {
+        gap: 12px;
+    }
+    .nav-container > .btn {
+        padding: 0.5rem 0.9rem !important;
+        font-size: 0.8rem !important;
+    }
+    .nav-container > .logo img {
+        max-width: 140px;
+        height: auto;
     }
 }
