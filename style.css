@@ -949,3 +949,36 @@ footer {
         height: auto;
     }
 }
+
+/* Anasayfa "Hakkımızda" kısa tanıtım */
+.about-stats {
+    display: flex;
+    gap: 1rem;
+    list-style: none;
+    padding: 0;
+    margin: 1.6rem 0;
+}
+.about-stats li {
+    background: var(--primary-light);
+    border-radius: 12px;
+    padding: 0.9rem 1.4rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 130px;
+}
+.about-stat-num {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 700;
+    font-size: 1.9rem;
+    color: var(--primary-color);
+    line-height: 1.1;
+}
+.about-stat-label {
+    font-size: 0.9rem;
+    font-weight: 600;
+    color: var(--text-color);
+}
+.about-more .fa-arrow-right {
+    margin-left: 0.4rem;
+}
