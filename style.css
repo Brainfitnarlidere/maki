@@ -1003,3 +1003,16 @@ h2.text-center::after { left: 50%; transform: translateX(-50%); }
 .project-more[open] .more-close { display: inline; }
 .project-more[open] > summary { margin-bottom: 1rem; }
 .project-more > summary:hover { text-decoration: underline; }
+
+/* Rakam şeridi */
+.stats-strip { background: #fff; border-bottom: 1px solid #f0e3ea; box-shadow: 0 8px 24px rgba(197, 54, 120, 0.06); position: relative; z-index: 1; }
+.stats-strip-list { list-style: none; margin: 0 auto; padding: 1.8rem 20px; display: grid; grid-template-columns: repeat(3, 1fr); max-width: 900px; }
+.stats-strip-list li { display: flex; flex-direction: column; align-items: center; text-align: center; gap: 0.2rem; }
+.stats-strip-list li + li { border-left: 1px solid #f0e3ea; }
+.stats-num { font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 2.4rem; line-height: 1.1; color: var(--primary-color); }
+.stats-label { font-size: 0.95rem; font-weight: 600; color: var(--text-color); }
+@media (max-width: 480px) {
+    .stats-strip-list { padding: 1.3rem 12px; }
+    .stats-num { font-size: 1.7rem; }
+    .stats-label { font-size: 0.8rem; }
+}
