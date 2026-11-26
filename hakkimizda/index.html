@@ -31,10 +31,8 @@
         .board h2 { font-size: 1.25rem; margin: 2.4rem 0 1.2rem; display: block; color: var(--text-color); }
         .board h2::after { display: none; }
         .board-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1.2rem; list-style: none; padding: 0; margin: 0; }
-        .board-card { background: #fff; border: 1px solid #f0e3ea; border-radius: 14px; padding: 1.4rem 1.2rem; display: flex; align-items: center; gap: 1rem; box-shadow: 0 6px 18px rgba(197, 54, 120, 0.06); }
-        .board-avatar { flex: 0 0 52px; width: 52px; height: 52px; border-radius: 50%; background: var(--primary-light); color: var(--primary-color); display: flex; align-items: center; justify-content: center; font-family: 'Montserrat', sans-serif; font-weight: 700; font-size: 1.05rem; }
+        .board-card { background: #fff; border: 1px solid #f0e3ea; border-radius: 14px; padding: 1.4rem 1.5rem; display: flex; align-items: center; box-shadow: 0 6px 18px rgba(197, 54, 120, 0.06); }
         .board-card.is-chair { border-color: var(--primary-color); }
-        .board-card.is-chair .board-avatar { background: var(--primary-color); color: #fff; }
         .board-name { font-family: 'Montserrat', sans-serif; font-weight: 700; color: var(--text-color); font-size: 1.02rem; line-height: 1.3; }
         .board-role { color: var(--light-text); font-size: 0.88rem; margin-top: 0.2rem; }
         .board-grid.is-substitute .board-card { background: var(--bg-light); box-shadow: none; }
@@ -81,23 +79,18 @@
             <h3 class="board-sub">Asıl Üyeler</h3>
             <ul class="board-grid">
                 <li class="board-card is-chair">
-                    <span class="board-avatar" aria-hidden="true">BY</span>
                     <div><div class="board-name">Berker YILDIZ</div><div class="board-role">Yönetim Kurulu Başkanı</div></div>
                 </li>
                 <li class="board-card">
-                    <span class="board-avatar" aria-hidden="true">RA</span>
                     <div><div class="board-name">Rezzan AYDIN</div><div class="board-role">Yönetim Kurulu Başkan Yardımcısı</div></div>
                 </li>
                 <li class="board-card">
-                    <span class="board-avatar" aria-hidden="true">ŞY</span>
                     <div><div class="board-name">Şavkı ŞAHAN YILDIZ</div><div class="board-role">Yönetim Kurulu Sekreteri</div></div>
                 </li>
                 <li class="board-card">
-                    <span class="board-avatar" aria-hidden="true">ŞG</span>
                     <div><div class="board-name">Şeyda Figen GÖÇMEN</div><div class="board-role">Yönetim Kurulu Üyesi</div></div>
                 </li>
                 <li class="board-card">
-                    <span class="board-avatar" aria-hidden="true">ST</span>
                     <div><div class="board-name">Sinem SAGSOY TEPEOĞLU</div><div class="board-role">Yönetim Kurulu Üyesi</div></div>
                 </li>
             </ul>
@@ -105,15 +98,12 @@
             <h3 class="board-sub">Yedek Üyeler</h3>
             <ul class="board-grid is-substitute">
                 <li class="board-card">
-                    <span class="board-avatar" aria-hidden="true">NC</span>
                     <div><div class="board-name">Nazan CAN</div><div class="board-role">Yönetim Kurulu Yedek Üyesi</div></div>
                 </li>
                 <li class="board-card">
-                    <span class="board-avatar" aria-hidden="true">AT</span>
                     <div><div class="board-name">Alev TUNÇ</div><div class="board-role">Yönetim Kurulu Yedek Üyesi</div></div>
                 </li>
                 <li class="board-card">
-                    <span class="board-avatar" aria-hidden="true">PÖ</span>
                     <div><div class="board-name">Pınar Gül ÖZSÜVARİLER</div><div class="board-role">Yönetim Kurulu Yedek Üyesi</div></div>
                 </li>
             </ul>
