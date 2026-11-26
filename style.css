@@ -1016,3 +1016,10 @@ h2.text-center::after { left: 50%; transform: translateX(-50%); }
     .stats-num { font-size: 1.7rem; }
     .stats-label { font-size: 0.8rem; }
 }
+
+/* Hero butonları arası boşluk */
+.hero-btns { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem; }
+.hero-btns .btn { margin-left: 0; }
+@media (max-width: 768px) {
+    .hero-btns { gap: 1.1rem; }
+}
