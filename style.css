@@ -144,7 +144,7 @@ h1, h2, h3 {
 /* Hero Section */
 .hero {
     height: 100vh;
-    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.4)), url('assets/hero_bg.png') no-repeat center center/cover;
+    background: linear-gradient(90deg, rgba(20,10,16,0.72) 0%, rgba(20,10,16,0.5) 45%, rgba(20,10,16,0.12) 80%), url('assets/hero_bg.png') no-repeat center center/cover;
     display: flex;
     align-items: center;
     color: #fff;
@@ -982,3 +982,24 @@ footer {
 .about-more .fa-arrow-right {
     margin-left: 0.4rem;
 }
+
+/* Hero okunabilirlik */
+.hero h1, .hero p { text-shadow: 0 2px 12px rgba(0,0,0,0.45); }
+@media (max-width: 768px) {
+    .hero { background: linear-gradient(rgba(20,10,16,0.62), rgba(20,10,16,0.62)), url('assets/hero_bg.png') no-repeat center center/cover; }
+}
+
+/* Ortalanmış bölüm başlıkları */
+h2.text-center { display: block; width: fit-content; margin-left: auto; margin-right: auto; }
+h2.text-center::after { left: 50%; transform: translateX(-50%); }
+
+/* Proje kartı: Devamını oku */
+.project-more { margin-top: 1rem; }
+.project-more > summary { list-style: none; cursor: pointer; color: var(--primary-color); font-weight: 700; font-size: 0.95rem; display: inline-flex; align-items: center; gap: 0.4rem; }
+.project-more > summary::-webkit-details-marker { display: none; }
+.project-more > summary::after { content: '\203A'; font-size: 1.2rem; line-height: 1; transition: transform 0.2s; transform: rotate(90deg); }
+.project-more[open] > summary::after { transform: rotate(-90deg); }
+.project-more .more-close, .project-more[open] .more-open { display: none; }
+.project-more[open] .more-close { display: inline; }
+.project-more[open] > summary { margin-bottom: 1rem; }
+.project-more > summary:hover { text-decoration: underline; }
